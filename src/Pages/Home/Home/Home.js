@@ -7,6 +7,7 @@ import MangeWatch from '../MangeWatch/MangeWatch';
 import Specs from '../Specs/Specs';
 import Welcome from '../Welcome/Welcome';
 import Intro from './Intro/Intro';
+import Subscribe from './Subscribe/Subscribe';
 
 
 const Home = () => {
@@ -38,6 +39,7 @@ const Home = () => {
             <Features></Features>
             <MangeWatch></MangeWatch>
             <Specs></Specs>
+            <Subscribe></Subscribe>
         </>
     );
 };

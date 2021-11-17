@@ -54,12 +54,12 @@ const Header = () => {
                             {
                                 user.email || userImg ?
                                     <div>
-                                        <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="primary" onClick={handleShow} className="text-white">
+                                        <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="white" onClick={handleShow} className="text-white">
                                         </Button>
                                         <div className="my-2 mx-auto">
                                             {
                                                 user.email &&
-                                                <h6>{user.displayName}</h6>
+                                                <h6 className="text-white">{user.displayName}</h6>
                                             }
                                         </div>
                                         <Offcanvas className="quality" show={showUser} onHide={handleClose} placement="end">
@@ -78,20 +78,19 @@ const Header = () => {
                                                 </div>
                                                 <Table hover className="mt-5">
                                                     <tbody>
-                                                        <Link to=""></Link>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-capitialize text-decoration-none text-color" to="/my-order">My Bookings</Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/my-order"><i className="fas fa-grip-horizontal me-2"></i>Dashboard<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order"><i className="fab fa-opencart me-2"></i>My Cart</Link>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-capitialize text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/add-packages"><i className="far fa-heart me-2"></i>My Wishlist</Link>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -188,7 +187,7 @@ const Header = () => {
                                 {
                                     user.email || userImg ?
                                         <div>
-                                            <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="primary" onClick={handleShow} className="text-white">
+                                            <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="white" onClick={handleShow} className="text-white">
                                             </Button>
                                             <Offcanvas className="quality" show={showUser} onHide={handleClose} placement="end">
                                                 <Offcanvas.Header className="ms-auto" closeButton>
@@ -206,20 +205,19 @@ const Header = () => {
                                                     </div>
                                                     <Table hover className="mt-5">
                                                         <tbody>
-                                                            <Link to=""></Link>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/my-order">My Bookings</Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/my-order"><i className="fas fa-grip-horizontal me-2"></i>Dashboard<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order"><i className="fab fa-opencart me-2"></i>My Cart</Link>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/add-packages"><i className="far fa-heart me-2"></i>My Wishlist</Link>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
