@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Header></Header>
+
           <Switch>
             <Route exact path="/">
               <Home></Home>

@@ -11,17 +11,21 @@
   z-index: 99;
 }
 
+/* navbar */
 
-/* colors  */
-.text-color {
-  color: #222222;
+
+.active{
+  background: rgba(37, 74, 196, 0.829);
+  transition: 1s;
 }
-.primary-color-bg{
-  background-color: #31D2F2;
+.bar{
+  background: #4b87be46;
+  transition: 1s;
 }
-.secondary-color{
-  color:#03425B;
-}
+
+/* home */
+
+
 
 /* header */
 .block{
@@ -63,68 +67,30 @@
 
 
 /* banner */
-.bg-banner{
-  background-color: rgba(255, 253, 253, 0.589);
-}
+
 .quality{
   background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-.icon{
-  color: #131313;
-}
-.h-card{
-  transition: 0.5s;
-}
-.h-card:hover{
-  background-color: #131313;
-  color: white;
-  box-shadow: 5px 5px 20px rgb(51, 51, 51);
-}
-.h-card:hover .icon{
-  color: #fff;
-
-}
-
-/* pricing  */
-.pricing{
-  background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.Price-card{
-  transition: 0.8s;
-}
-.Price-card:hover{
-  transform: scale(1.1);
-}
-.price{
-  background-color: #31d2f23f;
-}
-
-/* packages */
-.service-card-img {
-  overflow: hidden;
-}
-.service-card-img img{
-  transition: 0.8s;
+.banner{
+  background-image: url("https://i.ibb.co/xSzsKZW/slider1-elomus3-1920x900-1920x900-progressive.jpg");
   width: 100%;
-  height: 200px;
-  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.service-card-img:hover img{
-  transform: scale(1.2);
+
+.fxl{
+  font-size: 5.5rem;
+  color: white;
 }
 
 
-/* order / booking */
-.order-img img{
-  width: 100px;
-  height: 50px;
-  border-radius: 5px;
-}
+
+
+
 
 /* footer  */
 .footer{

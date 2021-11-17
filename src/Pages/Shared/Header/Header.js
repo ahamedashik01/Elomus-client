@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Col, Container, Button, Nav, Navbar, Row, Offcanvas, Table, Dropdown, Modal } from 'react-bootstrap';
+import { Container, Button, Nav, Navbar, Offcanvas, Table, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
+
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -20,29 +21,40 @@ const Header = () => {
     const [showUser, setShowUser] = useState(false);
     const handleClose = () => setShowUser(false);
     const handleShow = () => setShowUser(true);
+    const [navbar, setNavbar] = useState(false);
+
+    const changeBackground = () => {
+        if (window.scrollY >= 100) {
+            setNavbar(true);
+        } else {
+            setNavbar(false);
+        }
+    }
+    window.addEventListener('scroll', changeBackground);
+
     return (
-        <div className="secondary-color">
-            <Navbar className="py-3 " sticky="top" collapseOnSelect expand="lg" bg="light">
+        <div className="">
+            <Navbar className={navbar ? 'fixed-top active py-3' : 'bar py-3'} collapseOnSelect expand="lg">
                 <Container>
                     <Link className="text-decoration-none" to="/home">
-                        <Navbar.Brand className="fs-4 fw-bold"><i className="fas fa-plane-departure me-2"></i>Travelz</Navbar.Brand>
+                        <Navbar.Brand className="fs-4 fw-bold text-white"><i className="fas fa-plane-departure me-2 text-white"></i>Travelz</Navbar.Brand>
                     </Link>
                     <Navbar.Toggle className="ms-auto" aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link as={Link} className="text-dark text-uppercase" to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-uppercase" to="/home">Home</Nav.Link>
                             <Nav.Link>
-                                <NavHashLink className="text-dark text-uppercase text-decoration-none" to="/home#packages">EXPLORE</NavHashLink>
+                                <NavHashLink className="text-white text-uppercase text-decoration-none" to="/home#packages">EXPLORE</NavHashLink>
                             </Nav.Link>
-                            <Nav.Link as={Link} className="text-dark text-uppercase" to="/about">About us</Nav.Link>
-                            <Nav.Link as={Link} className="text-dark text-uppercase" to="/contact">Contact</Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-uppercase" to="/about">About us</Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-uppercase" to="/contact">Contact</Nav.Link>
                         </Nav>
                         <div className="block">
                             <hr className="w-25 mx-auto" />
                             {
                                 user.email || userImg ?
                                     <div>
-                                        <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="dark" onClick={handleShow} className="text-white">
+                                        <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="primary" onClick={handleShow} className="text-white">
                                         </Button>
                                         <div className="my-2 mx-auto">
                                             {
@@ -88,11 +100,11 @@ const Header = () => {
                                         </Offcanvas>
                                     </div>
                                     :
-                                    <Link to="/login"><button className="px-3 text-dark btn btn-dark text-white rounded-pill"><i className="fas fa-user me-2"></i>Log In</button></Link>
+                                    <Link to="/login"><button className="px-3 text-dark btn btn-white text-white rounded-pill"><i className="fas fa-user me-2"></i>Log In</button></Link>
                             }
                             <div className="d-flex justify-content-around align-items-center">
                                 <div title="Wishlist" className="me-1">
-                                    <Button variant="text" onClick={handleModalShow} className="text-dark">
+                                    <Button variant="text" onClick={handleModalShow} className="text-white">
                                         <i class="far fa-heart"></i>
                                     </Button>
                                     <Modal show={ModalShow} onHide={handleModalClose}>
@@ -111,7 +123,7 @@ const Header = () => {
                                     </Modal>
                                 </div>
                                 <div title="Cart" className="me-3">
-                                    <Button variant="text" onClick={handleModalShowcart} className="text-dark">
+                                    <Button variant="text" onClick={handleModalShowcart} className="text-white">
                                         <i className="fas fa-dolly-flatbed"></i>
                                     </Button>
                                     <Modal show={ModalShowcart} onHide={handleModalClosecart}>
@@ -135,7 +147,7 @@ const Header = () => {
                     <div className="ms-auto seen">
                         <div className="d-flex justify-content-around align-items-center">
                             <div title="Wishlist" className="me-1">
-                                <Button variant="text" onClick={handleModalShow} className="text-dark">
+                                <Button variant="text" onClick={handleModalShow} className="text-white">
                                     <i class="far fa-heart"></i>
                                 </Button>
                                 <Modal show={ModalShow} onHide={handleModalClose}>
@@ -154,7 +166,7 @@ const Header = () => {
                                 </Modal>
                             </div>
                             <div title="Cart" className="me-1">
-                                <Button variant="text" onClick={handleModalShowcart} className="text-dark">
+                                <Button variant="text" onClick={handleModalShowcart} className="text-white">
                                     <i className="fas fa-dolly-flatbed"></i>
                                 </Button>
                                 <Modal show={ModalShowcart} onHide={handleModalClosecart}>
@@ -176,7 +188,7 @@ const Header = () => {
                                 {
                                     user.email || userImg ?
                                         <div>
-                                            <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="dark" onClick={handleShow} className="text-white">
+                                            <Button style={{ backgroundImage: `url(${userImg})`, backgroundSize: 'cover', height: '40px', width: '40px', borderRadius: '50%' }} variant="primary" onClick={handleShow} className="text-white">
                                             </Button>
                                             <Offcanvas className="quality" show={showUser} onHide={handleClose} placement="end">
                                                 <Offcanvas.Header className="ms-auto" closeButton>
@@ -216,7 +228,7 @@ const Header = () => {
                                             </Offcanvas>
                                         </div>
                                         :
-                                        <Link to="/login"><button className="px-3 text-dark btn btn-dark text-white rounded-pill"><i className="fas fa-user me-2"></i>Log In</button></Link>
+                                        <Link to="/login"><button title="login/register" className="px-3 text-dark btn btn-primary shadow text-white rounded-pill"><i className="fas fa-user me-2"></i>Log In</button></Link>
                                 }
                             </div>
                         </div>

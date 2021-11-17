@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import Header from '../../Shared/Header/Header';
 
 
 const Login = () => {
@@ -38,25 +39,28 @@ const Login = () => {
             .finally(() => setIsLoading(false));
     }
     return (
-        <div className="login-form quality">
-            <div className="form">
-                <h2>Login</h2>
-                <form onSubmit={useHandleLoginWithEmail} >
-                    <input onBlur={takingEmail} className="input" type="email"
-                        placeholder="Your Email" />
-                    <br />
-                    <input onBlur={takingPassword} className="input" type="password"
-                        placeholder="Password" />
-                    <div className="text-danger">{error}</div>
-                    <br />
-                    <input className="btn btn-dark rounded-pill text-white px-4" type="submit" value="Log In" />
-                </form>
-                <p className="my-4">New to Travelz? <br /> <Link to="/register">Create Account</Link></p>
-                <div>Or</div>
-                <hr />
-                <button onClick={UseSignInUsingGoogle} className="btn btn-dark  rounded-pill px-4 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>
-            </div>
-        </div >
+        <>
+            <Header></Header>
+            <div className="login-form quality">
+                <div className="form">
+                    <h2>Login</h2>
+                    <form onSubmit={useHandleLoginWithEmail} >
+                        <input onBlur={takingEmail} className="input" type="email"
+                            placeholder="Your Email" />
+                        <br />
+                        <input onBlur={takingPassword} className="input" type="password"
+                            placeholder="Password" />
+                        <div className="text-danger">{error}</div>
+                        <br />
+                        <input className="btn btn-dark rounded-pill text-white px-4" type="submit" value="Log In" />
+                    </form>
+                    <p className="my-4">New to Travelz? <br /> <Link to="/register">Create Account</Link></p>
+                    <div>Or</div>
+                    <hr />
+                    <button onClick={UseSignInUsingGoogle} className="btn btn-dark  rounded-pill px-4 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>
+                </div>
+            </div >
+        </>
     );
 };
 
