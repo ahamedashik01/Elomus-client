@@ -40,7 +40,12 @@ const Login = () => {
     }
     return (
         <>
-            <Header></Header>
+            <div style={{ backgroundImage: `url('https://i.ibb.co/hZBWq0q/bkg-static5-elomus3.jpg')` }}>
+                <Header></Header>
+                <div className="py-5 mt-5 text-white">
+                    <h1>Login</h1>
+                </div>
+            </div>
             <div className="login-form quality">
                 <div className="form">
                     <h2>Login</h2>
@@ -52,12 +57,12 @@ const Login = () => {
                             placeholder="Password" />
                         <div className="text-danger">{error}</div>
                         <br />
-                        <input className="btn btn-dark rounded-pill text-white px-4" type="submit" value="Log In" />
+                        <input className="btn btn-primary shadow rounded-pill text-white px-4" type="submit" value="Log In" />
                     </form>
-                    <p className="my-4">New to Travelz? <br /> <Link to="/register">Create Account</Link></p>
+                    <p className="my-4">New to Elomus? <br /> <Link to="/register">Click to create account</Link></p>
                     <div>Or</div>
                     <hr />
-                    <button onClick={UseSignInUsingGoogle} className="btn btn-dark  rounded-pill px-4 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>
+                    <button onClick={UseSignInUsingGoogle} className="btn btn-primary shadow  rounded-pill px-4 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>
                 </div>
             </div >
         </>

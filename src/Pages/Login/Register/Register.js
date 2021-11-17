@@ -9,7 +9,12 @@ const Register = () => {
 
     return (
         <>
-            <Header></Header>
+            <div style={{ backgroundImage: `url('https://i.ibb.co/hZBWq0q/bkg-static5-elomus3.jpg')`, backgroundAttachment: 'fixed' }}>
+                <Header></Header>
+                <div className="py-5 mt-5 text-white">
+                    <h1>Register</h1>
+                </div>
+            </div>
             <div className="login-form quality">
                 <div className="form">
                     <h2>Create Account</h2>
@@ -27,12 +32,12 @@ const Register = () => {
                             placeholder="Re-enter Password" />
                         <div className="text-danger">{error}</div>
                         <br />
-                        <input className="btn btn-dark rounded-pill text-white px-4 mt-3" type="submit" value="Submit" />
+                        <input className="btn btn-primary shadow rounded-pill text-white px-4 mt-3" type="submit" value="Create Account" />
                     </form>
                     <p className="my-4">Already have an account? <br /> <Link to="/login"> Login here</Link></p>
                     <div>Or</div>
                     <hr />
-                    <button onClick={signInUsingGoogle} className="btn btn-dark rounded-pill px-4 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>
+                    <button onClick={signInUsingGoogle} className="btn btn-primary shadow rounded-pill px-4 text-white"><i className="fab fa-google me-3"> Google Sign In</i></button>
 
                 </div>
             </div>

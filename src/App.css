@@ -4,15 +4,15 @@
 
 /* custom css  */
 
-.z-index-h{
-  z-index: 9999;
-}
-.z-index-l{
-  z-index: 99;
-}
 
-/* navbar */
 
+/* header */
+.block{
+  display: none;
+}
+.seen{
+  display: block;
+}
 
 .active{
   background: rgba(37, 74, 196, 0.829);
@@ -25,15 +25,49 @@
 
 /* home */
 
+/* banner */
+
+.quality{
+  background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner{
+  background-image: url("https://i.ibb.co/xSzsKZW/slider1-elomus3-1920x900-1920x900-progressive.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.fxl{
+  font-size: 5.5rem;
+  color: white;
+}
+
+/* intro  */
+.intro-icon{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #FF9797;
+}
+.intro-icon-2{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #19C1FE;
+}
+.intro-icon-3{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color:#F8B42A;
+}
 
 
-/* header */
-.block{
-  display: none;
-}
-.seen{
-  display: block;
-}
+
 
 /* form  */
 .login-form{
@@ -66,26 +100,7 @@
 }
 
 
-/* banner */
 
-.quality{
-  background-image: url("https://image.freepik.com/free-vector/abstract-background-with-squares_23-2148995948.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.banner{
-  background-image: url("https://i.ibb.co/xSzsKZW/slider1-elomus3-1920x900-1920x900-progressive.jpg");
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.fxl{
-  font-size: 5.5rem;
-  color: white;
-}
 
 
 

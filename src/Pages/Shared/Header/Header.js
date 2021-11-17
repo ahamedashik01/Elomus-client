@@ -100,12 +100,12 @@ const Header = () => {
                                         </Offcanvas>
                                     </div>
                                     :
-                                    <Link to="/login"><button className="px-3 text-dark btn btn-white text-white rounded-pill"><i className="fas fa-user me-2"></i>Log In</button></Link>
+                                    <Link to="/login"><button className="px-3 btn btn-primary text-white shadow rounded-pill"><i className="fas fa-user me-2"></i>Log In</button></Link>
                             }
                             <div className="d-flex justify-content-around align-items-center">
                                 <div title="Wishlist" className="me-1">
                                     <Button variant="text" onClick={handleModalShow} className="text-white">
-                                        <i class="far fa-heart"></i>
+                                        <i className="far fa-heart"></i>
                                     </Button>
                                     <Modal show={ModalShow} onHide={handleModalClose}>
                                         <Modal.Header closeButton>
@@ -124,7 +124,7 @@ const Header = () => {
                                 </div>
                                 <div title="Cart" className="me-3">
                                     <Button variant="text" onClick={handleModalShowcart} className="text-white">
-                                        <i className="fas fa-dolly-flatbed"></i>
+                                        <i className="fab fa-opencart"></i>
                                     </Button>
                                     <Modal show={ModalShowcart} onHide={handleModalClosecart}>
                                         <Modal.Header closeButton>
@@ -167,7 +167,7 @@ const Header = () => {
                             </div>
                             <div title="Cart" className="me-1">
                                 <Button variant="text" onClick={handleModalShowcart} className="text-white">
-                                    <i className="fas fa-dolly-flatbed"></i>
+                                    <i className="fab fa-opencart"></i>
                                 </Button>
                                 <Modal show={ModalShowcart} onHide={handleModalClosecart}>
                                     <Modal.Header closeButton>
