@@ -9,7 +9,7 @@ const Intro = () => {
                 <Row className="g-4">
                     <Col xs={12} md={4}>
                         <div className='d-flex flex-column justify-content-center align-items-center'>
-                            <div className='my-4 intro-icon d-flex justify-content-center align-items-center'>
+                            <div className='my-4 intro-icon shadow d-flex justify-content-center align-items-center'>
                                 <div>
                                     <img className="w-100 text-center" src="https://cdn.shopify.com/s/files/1/0016/5412/8710/files/icon1-static1-elomus3.png?v=1534469853" alt="" />
                                 </div>
@@ -22,7 +22,7 @@ const Intro = () => {
                     </Col>
                     <Col xs={12} md={4}>
                         <div className='d-flex flex-column justify-content-center align-items-center'>
-                            <div className='my-4 intro-icon-2 d-flex justify-content-center align-items-center'>
+                            <div className='my-4 intro-icon-2 shadow d-flex justify-content-center align-items-center'>
                                 <div>
                                     <img className="w-100 text-center" src="https://cdn.shopify.com/s/files/1/0016/5412/8710/files/icon2-static1-elomus3.png?v=1534469905" alt="" />
                                 </div>
@@ -35,7 +35,7 @@ const Intro = () => {
                     </Col>
                     <Col xs={12} md={4}>
                         <div className='d-flex flex-column justify-content-center align-items-center'>
-                            <div className='my-4 intro-icon-3 d-flex justify-content-center align-items-center'>
+                            <div className='my-4 intro-icon-3 shadow d-flex justify-content-center align-items-center'>
                                 <div>
                                     <img className="w-100 text-center" src="https://cdn.shopify.com/s/files/1/0016/5412/8710/files/icon3-static1-elomus3.png?v=1534469942" alt="" />
                                 </div>

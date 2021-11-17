@@ -15,7 +15,7 @@
 }
 
 .active{
-  background: rgba(37, 74, 196, 0.829);
+  background: rgba(24, 57, 165, 0.897);
   transition: 1s;
 }
 .bar{
@@ -66,7 +66,17 @@
   background-color:#F8B42A;
 }
 
-
+/* features */
+.fetures-icon{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color:white;
+  transition: 0.7s;
+}
+.w-40{
+  width: 35%;
+}
 
 
 /* form  */
