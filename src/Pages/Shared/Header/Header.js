@@ -3,6 +3,7 @@ import { Container, Button, Nav, Navbar, Offcanvas, Table, Modal } from 'react-b
 import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
+import Badge from '@mui/material/Badge';
 
 
 const Header = () => {
@@ -166,7 +167,10 @@ const Header = () => {
                             </div>
                             <div title="Cart" className="me-1">
                                 <Button variant="text" onClick={handleModalShowcart} className="text-white">
-                                    <i className="fab fa-opencart"></i>
+
+                                    <Badge badgeContent={4} color="primary">
+                                        <i className="fab fa-opencart"></i>
+                                    </Badge>
                                 </Button>
                                 <Modal show={ModalShowcart} onHide={handleModalClosecart}>
                                     <Modal.Header closeButton>

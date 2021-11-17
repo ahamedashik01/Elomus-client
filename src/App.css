@@ -17,11 +17,11 @@
 }
 
 .active{
-  background: rgba(22, 53, 155, 0.829);
+  background: #007bffde;
   transition: 1s;
 }
 .bar{
-  background: #4b87be46;
+  background: #3a8bd375;
   transition: 1s;
 }
 

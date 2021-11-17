@@ -6,7 +6,7 @@ const Subscribe = () => {
         <div style={{ backgroundColor: '#F8F8F8' }} className="py-5">
             <Container className="d-flex justify-content-center align-items-center flex-column">
                 <h6>Our News</h6>
-                <h2 className="fw-bold">SIGN UP FOR LATEST NEWS</h2>
+                <h2 className="fw-bold"><span className="text-primary">SIGN</span> UP FOR LATEST NEWS</h2>
                 <hr className="w-50 bg-primary mx-auto" />
                 <hr className="w-50 bg-primary ms-auto" />
                 <div className="w-100 my-5 d-flex justify-content-center align-items-center">
