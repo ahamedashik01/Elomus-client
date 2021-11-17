@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import Header from '../../Shared/Header/Header';
 import Features from '../Features/Features';
 import MangeWatch from '../MangeWatch/MangeWatch';
+import Specs from '../Specs/Specs';
 import Welcome from '../Welcome/Welcome';
 import Intro from './Intro/Intro';
 
@@ -36,6 +37,7 @@ const Home = () => {
             <Welcome></Welcome>
             <Features></Features>
             <MangeWatch></MangeWatch>
+            <Specs></Specs>
         </>
     );
 };

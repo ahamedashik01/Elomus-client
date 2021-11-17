@@ -24,7 +24,7 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
-        if (window.scrollY >= 840) {
+        if (window.scrollY >= 640) {
             setNavbar(true);
         } else {
             setNavbar(false);
@@ -42,12 +42,12 @@ const Header = () => {
                     <Navbar.Toggle className="ms-auto" aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-capitialize" to="/home">Home</Nav.Link>
                             <Nav.Link>
-                                <NavHashLink className="text-white text-uppercase text-decoration-none" to="/home#packages">EXPLORE</NavHashLink>
+                                <NavHashLink className="text-white text-capitialize text-decoration-none" to="/home#packages">Explore</NavHashLink>
                             </Nav.Link>
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/about">About us</Nav.Link>
-                            <Nav.Link as={Link} className="text-white text-uppercase" to="/contact">Contact</Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-capitialize" to="/about">About us</Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-capitialize" to="/contact">Contact</Nav.Link>
                         </Nav>
                         <div className="block">
                             <hr className="w-25 mx-auto" />
@@ -81,17 +81,17 @@ const Header = () => {
                                                         <Link to=""></Link>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-uppercase text-decoration-none text-color" to="/my-order">My Bookings</Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/my-order">My Bookings</Link>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-uppercase text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-uppercase text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -209,17 +209,17 @@ const Header = () => {
                                                             <Link to=""></Link>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-uppercase text-decoration-none text-color" to="/my-order">My Bookings</Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/my-order">My Bookings</Link>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-uppercase text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order">Manage All Bookings</Link>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-uppercase text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/add-packages">Add A Package<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
