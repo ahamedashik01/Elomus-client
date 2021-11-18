@@ -80,6 +80,15 @@
   width: 35%;
 }
 
+/* products  */
+
+.curve{
+  border-radius: 25px;
+}
+.shadow-custom{
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.068);
+}
+
 
 /* form  */
 .login-form{

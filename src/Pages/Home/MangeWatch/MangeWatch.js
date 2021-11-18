@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 const MangeWatch = () => {
     return (
         <div className="py-5">
-            <Container>
+            <Container className="my-5">
                 <Row className="d-flex justify-content-center align-items-center g-4">
                     <Col xs={12} md={6} className="p-3">
                         <div>

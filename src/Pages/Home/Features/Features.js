@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 const Features = () => {
     return (
         <div className="py-5" style={{ backgroundColor: '#F8F8F8' }}>
-            <Container>
+            <Container className="my-5">
                 <div>
                     <h6 className="fw-bold">EXPLORE THE AWESOME</h6>
                     <h1>CORE <span className="text-primary">FEATURES</span></h1>

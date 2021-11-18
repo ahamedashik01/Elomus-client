@@ -6,6 +6,7 @@ import Features from '../Features/Features';
 import MangeWatch from '../MangeWatch/MangeWatch';
 import Specs from '../Specs/Specs';
 import Welcome from '../Welcome/Welcome';
+import FeaturedProduct from './FeaturedProduct/FeaturedProduct';
 import Intro from './Intro/Intro';
 import Subscribe from './Subscribe/Subscribe';
 
@@ -38,6 +39,7 @@ const Home = () => {
             <Welcome></Welcome>
             <Features></Features>
             <MangeWatch></MangeWatch>
+            <FeaturedProduct></FeaturedProduct>
             <Specs></Specs>
             <Subscribe></Subscribe>
         </>
