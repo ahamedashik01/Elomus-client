@@ -9,6 +9,7 @@ import Header from './Pages/Shared/Header/Header';
 import Explore from './Pages/Explore/Explore';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import BuyNow from './Pages/BuyNow/BuyNow';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path="/home">
               <Home></Home>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
             </Route>
             <Route exact path="/explore">
               <Explore></Explore>

@@ -5,7 +5,7 @@ import Header from '../../Shared/Header/Header';
 
 
 const Login = () => {
-    const { handleLoginWithEmail, setUser, setError, setIsLoading, signInUsingGoogle, takingEmail, takingPassword, error } = useAuth();
+    const { handleLoginWithEmail, setUser, setError, saveUser, setIsLoading, signInUsingGoogle, takingEmail, takingPassword, error } = useAuth();
     const location = useLocation();
     let history = useHistory();
     const redirect_uri = location.state?.from || '/home'
@@ -30,7 +30,10 @@ const Login = () => {
         setIsLoading(true)
         signInUsingGoogle()
             .then(result => {
-                setUser(result.user);
+                const user = result.user;
+                setUser(user);
+                // save user to the database
+                saveUser(user.email, user.displayName, "PUT");
                 history.push(redirect_uri);
             })
             .catch(error => {

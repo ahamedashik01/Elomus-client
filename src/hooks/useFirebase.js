@@ -1,5 +1,6 @@
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
 import { useState, useEffect } from 'react';
+import swal from "sweetalert";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
 
 
@@ -45,6 +46,19 @@ const useFirebase = () => {
         setEmail(e.target.value);
     }
 
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://glacial-sands-61817.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data));
+    }
+
 
 
     const handlePasswordChange = e => {
@@ -71,6 +85,8 @@ const useFirebase = () => {
                 setUser(user);
                 setError('');
                 setUserName();
+                // save user to the database
+                saveUser(email, name, "POST");
                 reload();
             })
             .catch(error => {
@@ -109,10 +125,13 @@ const useFirebase = () => {
     }
 
 
+
+
     return {
         user,
         isLoading,
         error,
+        saveUser,
         setUser,
         setError,
         signInUsingGoogle,

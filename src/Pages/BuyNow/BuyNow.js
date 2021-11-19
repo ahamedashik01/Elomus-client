@@ -8,6 +8,7 @@ import useAuth from '../../hooks/useAuth';
 import swal from 'sweetalert';
 import Header from '../Shared/Header/Header';
 import "./BuyNow.css"
+import Subscribe from '../Home/Home/Subscribe/Subscribe';
 
 const BuyNow = () => {
     const [products, setProducts] = useState([]);
@@ -17,8 +18,8 @@ const BuyNow = () => {
     // alert 
     const showAlert = () => {
         swal({
-            title: "Succesfully Booked!",
-            text: "We are meeting soon!",
+            title: "Succesfully Ordered!",
+            text: "Please wait for the confimartion it might take 1/2 hours!",
             icon: "success",
             button: "Aww yiss!",
         })
@@ -52,7 +53,7 @@ const BuyNow = () => {
                     <h1>Buy Now</h1>
                 </div>
             </div>
-            <div>
+            <div className="my-5">
                 <Container className="py-5">
                     <Row className="g-4">
                         <Col sm={12} md={5} className="mb-5 quality">
@@ -61,7 +62,7 @@ const BuyNow = () => {
                                     <h3 className="mb-3">{title}</h3>
                                     <hr />
                                     <div className="p-2 rounded-pill bg-primary text-white d-flex justify-content-between align-items-center">
-                                        <h4 className="ps-3">Total Cost</h4>
+                                        <h4 className="ps-3">Total Price</h4>
                                         <h4 className="pe-3"><i className="fas fa-pound-sign me-1"></i>{price} GBP</h4>
                                     </div>
                                 </div>
@@ -81,7 +82,7 @@ const BuyNow = () => {
                             <div className="order-adder shadow p-2 quality">
                                 <h4 className="my-4 text-center px-4"> Your Details</h4>
                                 <hr />
-                                <form onSubmit={handleSubmit(onSubmit)}>
+                                <form className="mb-3" onSubmit={handleSubmit(onSubmit)}>
                                     <input placeholder="Recipient Full Name" readonly type="text" {...register("recipientName", { required: true })} value={user.displayName} />
                                     <input placeholder="Recipient Email" type="email" value={user.email} readOnly {...register("recipientEmail", { required: true })} />
                                     <input placeholder="Recipient Phone Number" type="number" {...register("phoneNumber", { required: true })} />
@@ -89,13 +90,14 @@ const BuyNow = () => {
                                     <input placeholder="City" type="text" {...register("City", { required: true })} />
                                     <input placeholder="Country" type="text" {...register("Country", { required: true })} />
                                     <input placeholder="Zip code" type="text" {...register("zipCode", { required: true })} />
-                                    <input className="btn btn-dark" type="submit" value="BOOK PACKAGE" />
+                                    <input className="btn btn-primary" type="submit" value="BOOK PACKAGE" />
                                 </form>
                             </div>
                         </Col>
                     </Row>
                 </Container>
             </div>
+            <Subscribe></Subscribe>
         </>
     );
 };

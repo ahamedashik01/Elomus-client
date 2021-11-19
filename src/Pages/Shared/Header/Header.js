@@ -151,7 +151,7 @@ const Header = () => {
                                                         <tbody>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/my-order"><i className="fas fa-grip-horizontal me-2"></i>Dashboard<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/dashboard"><i className="fas fa-grip-horizontal me-2"></i>Dashboard<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                                 </td>
                                                             </tr>
                                                             <tr>
