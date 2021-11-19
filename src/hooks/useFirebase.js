@@ -13,6 +13,7 @@ const useFirebase = () => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -20,7 +21,13 @@ const useFirebase = () => {
     const reload = () => {
         window.location.reload();
     }
+    const url = `https://glacial-sands-61817.herokuapp.com/users/${user.email}`;
 
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
 
     const takingName = e => {
@@ -46,10 +53,10 @@ const useFirebase = () => {
         setEmail(e.target.value);
     }
 
-    const saveUser = (email, displayName, method) => {
+    const saveUser = (email, displayName) => {
         const user = { email, displayName };
         fetch('https://glacial-sands-61817.herokuapp.com/users', {
-            method: method,
+            method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
@@ -83,10 +90,10 @@ const useFirebase = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
+                // save user to the database
+                saveUser(email, name);
                 setError('');
                 setUserName();
-                // save user to the database
-                saveUser(email, name, "POST");
                 reload();
             })
             .catch(error => {
@@ -129,6 +136,7 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
         isLoading,
         error,
         saveUser,

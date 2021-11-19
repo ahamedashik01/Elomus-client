@@ -1,6 +1,8 @@
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import Review from '../../Dashboard/Review/Review';
+import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Features from '../Features/Features';
 import MangeWatch from '../MangeWatch/MangeWatch';
@@ -41,6 +43,7 @@ const Home = () => {
             <FeaturedProduct></FeaturedProduct>
             <Specs></Specs>
             <Subscribe></Subscribe>
+            <Footer></Footer>
         </>
     );
 };

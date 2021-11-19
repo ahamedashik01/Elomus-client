@@ -4,6 +4,7 @@ import { Alert, Col } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
+import Footer from '../../../Shared/Footer/Footer';
 
 const ProductCart = (props) => {
     const { _id, title, price, rating, img1 } = props.product;

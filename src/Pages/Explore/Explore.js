@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
 import ProductCart from '../Home/Home/FeaturedProduct/ProductCart';
+import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 
 const Explore = () => {
@@ -45,6 +46,7 @@ const Explore = () => {
                     <small>Showing 1 to 8 of 8 items</small>
                 </div>
             </Container>
+            <Footer></Footer>
         </>
     );
 };

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Button, Nav, Navbar, Offcanvas, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 import Badge from '@mui/material/Badge';
 import swal from 'sweetalert';
@@ -24,7 +23,7 @@ const Header = () => {
 
 
     const changeBackground = () => {
-        if (window.scrollY >= 640) {
+        if (window.scrollY >= 540) {
             setNavbar(true);
         } else {
             setNavbar(false);
@@ -37,7 +36,7 @@ const Header = () => {
             <Navbar className={navbar ? 'fixed-top active py-3' : 'bar py-3'} collapseOnSelect expand="lg">
                 <Container>
                     <Link className="text-decoration-none" to="/home">
-                        <Navbar.Brand className="fs-4 fw-bold text-white"><i className="fas fa-plane-departure me-2 text-white"></i>Travelz</Navbar.Brand>
+                        <Navbar.Brand className="fs-4 fw-bold text-white">EL<i className="fab fa-watchman-monitoring  text-primaru"></i>mus</Navbar.Brand>
                     </Link>
                     <Navbar.Toggle className="ms-auto" aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

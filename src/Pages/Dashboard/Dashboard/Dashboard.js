@@ -15,17 +15,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, useRouteMatch, Route, Switch } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import DasboardHome from '../DashboardHome/DasboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import MyOrders from '../MyOrders/MyOrders';
+import Payment from '../Payment/Payment';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import NewProduct from '../NewProduct/NewProduct';
+import Review from '../Review/Review';
 
 
-const drawerWidth = 200;
+const drawerWidth = 250;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
-    // const { admin } = useAuth();
+    const { admin } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -36,28 +42,62 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <List>
+                <Link className="text-decoration-none text-dark" to="/home">
+                    <ListItem button >
+                        <ListItemIcon>
+                        </ListItemIcon>
+                        <ListItemText primary='Home' />
+                    </ListItem>
+                </Link>
                 <Link className="text-decoration-none text-dark" to={`${url}`}>
                     <ListItem button >
                         <ListItemIcon>
-                            <MailIcon />
                         </ListItemIcon>
                         <ListItemText primary='Dashboard' />
                     </ListItem>
                 </Link>
-                <Link className="text-decoration-none text-dark" to={`${url}/makeAdmin`}>
+                <Link className="text-decoration-none text-dark" to={`${url}/payment`}>
                     <ListItem button >
                         <ListItemIcon>
-                            <MailIcon />
                         </ListItemIcon>
-                        <ListItemText primary='Make Admin' />
+                        <ListItemText primary='Payment' />
                     </ListItem>
                 </Link>
-                <Link className="text-decoration-none text-dark" to={`${url}/My Orders`}>
+                {
+                    admin && <Link className="text-decoration-none text-dark" to={`${url}/makeAdmin`}>
+                        <ListItem button >
+                            <ListItemIcon>
+                            </ListItemIcon>
+                            <ListItemText primary='Make Admin' />
+                        </ListItem>
+                    </Link>
+                }
+                <Link className="text-decoration-none text-dark" to={`${url}/mangeMyOrders`}>
                     <ListItem button >
                         <ListItemIcon>
-                            <MailIcon />
                         </ListItemIcon>
-                        <ListItemText primary='Make Admin' />
+                        <ListItemText primary='My Orders' />
+                    </ListItem>
+                </Link>
+                {admin && <Link className="text-decoration-none text-dark" to={`${url}/mangeAllOrders`}>
+                    <ListItem button >
+                        <ListItemIcon>
+                        </ListItemIcon>
+                        <ListItemText primary='Manage All Orders' />
+                    </ListItem>
+                </Link>}
+                {admin && <Link className="text-decoration-none text-dark" to={`${url}/newproduct`}>
+                    <ListItem button >
+                        <ListItemIcon>
+                        </ListItemIcon>
+                        <ListItemText primary='Manage Products' />
+                    </ListItem>
+                </Link>}
+                <Link className="text-decoration-none text-dark" to={`${url}/review`}>
+                    <ListItem button >
+                        <ListItemIcon>
+                        </ListItemIcon>
+                        <ListItemText primary='Give Review' />
                     </ListItem>
                 </Link>
 
@@ -135,6 +175,21 @@ function Dashboard(props) {
                         </Route>
                         <Route path={`${path}/makeAdmin`}>
                             <MakeAdmin></MakeAdmin>
+                        </Route>
+                        <Route path={`${path}/payment`}>
+                            <Payment></Payment>
+                        </Route>
+                        <Route path={`${path}/mangeMyOrders`}>
+                            <MyOrders></MyOrders>
+                        </Route>
+                        <Route path={`${path}/newproduct`}>
+                            <NewProduct></NewProduct>
+                        </Route>
+                        <Route path={`${path}/mangeAllOrders`}>
+                            <ManageAllOrders></ManageAllOrders>
+                        </Route>
+                        <Route path={`${path}/review`}>
+                            <Review></Review>
                         </Route>
 
                     </Switch>

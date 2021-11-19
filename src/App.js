@@ -5,11 +5,13 @@ import AuthProvider from './contexts/AuthProvider';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Home from './Pages/Home/Home/Home';
-import Header from './Pages/Shared/Header/Header';
 import Explore from './Pages/Explore/Explore';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import BuyNow from './Pages/BuyNow/BuyNow';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import NotFound from './Pages/NotFound/NotFound';
+import About from './Pages/About/About';
+import Contact from './Pages/Home/Contact/Contact';
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
             <Route exact path="/explore">
               <Explore></Explore>
             </Route>
+            <Route exact path="/about">
+              <About></About>
+            </Route>
+            <Route exact path="/contact">
+              <Contact></Contact>
+            </Route>
             <Route path="/product/:id">
               <ProductDetails></ProductDetails>
             </Route>
@@ -43,11 +51,10 @@ function App() {
               <Register></Register>
             </Route>
             <Route path="*">
-
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>
-
       </AuthProvider>
     </div>
   );
