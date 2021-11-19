@@ -127,7 +127,6 @@
 
 
 
-
 /* footer  */
 .footer{
   background-color:#4e565a ;
@@ -152,6 +151,20 @@
   .contact{
     margin-right: 40px ;
   }
+  .fxl{
+    font-size: 3rem;
+    color: white;
+  }
+  /* subscribe */
+  .sub{
+    width: 100%;
+    display: block;
+  }
+  .sub{
+    width: 100%;
+    display: block;
+  }
+
 }
 
   .App-header {

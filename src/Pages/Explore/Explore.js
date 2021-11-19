@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import ProductCart from './ProductCart';
+import ProductCart from '../Home/Home/FeaturedProduct/ProductCart';
+import Header from '../Shared/Header/Header';
 
-const Packages = () => {
+const Explore = () => {
     const [products, setProducts] = useState([]);
 
 
@@ -16,12 +16,17 @@ const Packages = () => {
     }, [])
 
     return (
-        <div className="my-5 py-5" >
-            <Container className="mb-5">
-                <h6>FEATURED</h6>
-                <h1 className="mb-5"><span className="text-primary">SMARTWATCH</span> PRODUCTS</h1>
-                <hr className="w-50 bg-primary mx-auto mt-5" />
-                <hr className="w-50 bg-primary ms-auto" />
+        <>
+            <div style={{ backgroundImage: `url('https://i.ibb.co/hZBWq0q/bkg-static5-elomus3.jpg')` }}>
+                <Header></Header>
+                <div className="py-5 mt-5 text-white">
+                    <h1>Explore</h1>
+                </div>
+            </div>
+            <Container>
+                <div className="border border-1 mt-5 text-start px-4 py-3 curve">
+                    <small>Showing 1 to 8 of 8 items</small>
+                </div>
                 <Row className="g-5 mt-3">
                     {
                         products.length === 0 ?
@@ -29,21 +34,19 @@ const Packages = () => {
                                 <Spinner className="mx-auto" animation="grow" />
                             </div>
                             :
-                            products.slice(0, 6).map(product => <ProductCart
+                            products.map(product => <ProductCart
                                 key={product._id}
                                 product={product}
                             >
                             </ProductCart>)
                     }
                 </Row>
-                <div className="text-center mt-5 pt-5">
-                    <Link to="/explore">
-                        <button className="btn btn-primary px-4 rounded-pill">Explore More 💬</button>
-                    </Link>
+                <div className="border border-1 mt-5 text-start px-4 py-3 curve">
+                    <small>Showing 1 to 8 of 8 items</small>
                 </div>
             </Container>
-        </div>
+        </>
     );
 };
 
-export default Packages;
+export default Explore;

@@ -1,0 +1,35 @@
+.order-adder form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order-adder form input,textarea{
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+
+@media only screen and (max-width: 768px)  {
+    .order-adder{
+        
+        width: 90%;
+        margin: auto;
+    }
+    .order-adder form input,textarea{
+        width: 90%;
+        margin: 25px 0;
+    }
+}
+@media only screen and (max-width: 1024px)  {
+    .order-adder{
+        
+        width: 90%;
+        margin: auto;
+    }
+    .order-adder form input,textarea{
+        width: 90%;
+        margin: 25px 0;
+    }
+}

@@ -20,7 +20,6 @@ const Home = () => {
                 {/* banner  */}
                 <div className="banner-box text-start py-5 ">
                     <Container className="py-5">
-                        {/* <div className="py-5"></div> */}
                         <div className="w-50 me-auto mt-5">
                             <div className="first-line py-3">
                                 <h5 className="text-white fst-italic">Sale 25% Discount</h5>

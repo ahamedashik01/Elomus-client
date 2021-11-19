@@ -1,54 +1,27 @@
 import { Rating } from '@mui/material';
-import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import { Alert, Col } from 'react-bootstrap';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-import useAuth from '../../../../hooks/useAuth';
 
 const ProductCart = (props) => {
-    const { user } = useAuth();
     const { _id, title, price, rating, img1 } = props.product;
+    const { id } = useParams();
 
-    const handleCart = () => {
-        if (!user.email) {
-            swal({
-                title: "Snap☹!! You are not logged in",
-                text: "Please, log in to add products to the cart",
-                icon: "warning",
-                button: "Ok",
-                dangerMode: true,
-            })
-        } else {
-            const cart = {
-                _id,
-                title,
-                price,
-                img1
-            }
-            axios.post('https://glacial-sands-61817.herokuapp.com/cart', cart)
-                .then(res => {
-                    console.log(res);
-                    if (res.data.insertedId) {
-                        swal({
-                            title: "ADDED TO CART",
-                            text: "Go to cart to checkout",
-                            icon: "success",
-                            button: "Aww yiss!",
-                        });
-                    }
-                })
-        }
-
+    //alert
+    const showALert = () => {
+        swal("Snap!💔", "This is not fuctional yet!");
     }
-
 
     return (
         <>
 
             <Col xs={12} md={4}>
                 <div className="mx-2 curve shadow-custom quality">
-                    <div className="text-start p-3">
-                        <button onClick={handleCart} className="btn shadow me-3 btn-primary px-3 rounded-pill ">ADD TO CART</button>
+                    <div className="p-3 d-flex justify-content-between align-items-center">
+                        <button onClick={showALert} className="btn shadow me-3 btn-white px-3 rounded-pill "><i className="text-primary far fa-heart"></i></button>
+                        <button onClick={showALert} className="btn shadow me-3 btn-white px-3 rounded-pill "><i className="text-primary fas fa-shopping-cart"></i></button>
                     </div>
                     <div className="w-75 mx-auto pb-4">
                         <div className="mb-3">
@@ -57,8 +30,13 @@ const ProductCart = (props) => {
                         <Rating name="half-rating-read" size="small" className="text-primary" defaultValue={rating} precision={0.5} readOnly />
                         <h6 className="mt-2">{title}</h6>
                         <h5 className="mt-2">${price}</h5>
-                        <div className="text-end none">
-                            <button className="btn shadow btn-outline-primary px-4 rounded-pill ">BUY NOW</button>
+                        <div className="d-flex justify-content-between align-items-center">
+                            <Link to={`/product/${_id}`}>
+                                <button className="btn shadow btn-outline-primary px-4 rounded-pill ">Details</button>
+                            </Link>
+                            <Link to={`/buynow/${_id}`}>
+                                <button className="btn shadow btn-primary px-4 rounded-pill ">Buy now</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

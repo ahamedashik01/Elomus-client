@@ -1,28 +1,27 @@
-import React, { useState } from 'react';
-import { Container, Button, Nav, Navbar, Offcanvas, Table, Modal } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Container, Button, Nav, Navbar, Offcanvas, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 import Badge from '@mui/material/Badge';
+import swal from 'sweetalert';
 
 
 const Header = () => {
     const { user, logOut } = useAuth();
     const userImg = user.photoURL;
-    //modal
-    const [ModalShow, setModalShow] = useState(false);
-    const [ModalShowcart, setModalShowcart] = useState(false);
-
-    const handleModalClose = () => setModalShow(false);
-    const handleModalShow = () => setModalShow(true);
-    const handleModalClosecart = () => setModalShowcart(false);
-    const handleModalShowcart = () => setModalShowcart(true);
 
     //react-offcanvas
     const [showUser, setShowUser] = useState(false);
     const handleClose = () => setShowUser(false);
     const handleShow = () => setShowUser(true);
     const [navbar, setNavbar] = useState(false);
+
+    //alert
+    const showALert = () => {
+        swal("Snap!💔", "This is not fuctional yet!");
+    }
+
 
     const changeBackground = () => {
         if (window.scrollY >= 640) {
@@ -44,9 +43,7 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
                             <Nav.Link as={Link} className="text-white text-capitialize" to="/home">Home</Nav.Link>
-                            <Nav.Link>
-                                <NavHashLink className="text-white text-capitialize text-decoration-none" to="/home#packages">Explore</NavHashLink>
-                            </Nav.Link>
+                            <Nav.Link as={Link} className="text-white text-capitialize" to="/explore">Explore</Nav.Link>
                             <Nav.Link as={Link} className="text-white text-capitialize" to="/about">About us</Nav.Link>
                             <Nav.Link as={Link} className="text-white text-capitialize" to="/contact">Contact</Nav.Link>
                         </Nav>
@@ -81,17 +78,17 @@ const Header = () => {
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-capitialize text-decoration-none text-color" to="/my-order"><i className="fas fa-grip-horizontal me-2"></i>Dashboard<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="/dashboard"><i className="fas fa-grip-horizontal me-2"></i>Dashboard<span class="badge bg-dark rounded-pill ms-2">New</span></Link>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order"><i className="fab fa-opencart me-2"></i>My Cart</Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="" onClick={showALert}><i className="fab fa-opencart me-2"></i>My Cart</Link>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <Link className="text-capitialize text-decoration-none text-color" to="/add-packages"><i className="far fa-heart me-2"></i>My Wishlist</Link>
+                                                                <Link className="text-capitialize text-decoration-none text-color" to="" onClick={showALert}><i className="far fa-heart me-2"></i>My Wishlist</Link>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -104,42 +101,14 @@ const Header = () => {
                             }
                             <div className="d-flex justify-content-around align-items-center">
                                 <div title="Wishlist" className="me-1">
-                                    <Button variant="text" onClick={handleModalShow} className="text-white">
+                                    <Button onClick={showALert} variant="text" className="text-white">
                                         <i className="far fa-heart"></i>
                                     </Button>
-                                    <Modal show={ModalShow} onHide={handleModalClose}>
-                                        <Modal.Header closeButton>
-                                            <Modal.Title>Modal heading</Modal.Title>
-                                        </Modal.Header>
-                                        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                                        <Modal.Footer>
-                                            <Button variant="secondary" onClick={handleModalClose}>
-                                                Close
-                                            </Button>
-                                            <Button variant="primary" onClick={handleModalClose}>
-                                                Save Changes
-                                            </Button>
-                                        </Modal.Footer>
-                                    </Modal>
                                 </div>
                                 <div title="Cart" className="me-3">
-                                    <Button variant="text" onClick={handleModalShowcart} className="text-white">
+                                    <Button onClick={showALert} variant="text" className="text-white">
                                         <i className="fab fa-opencart"></i>
                                     </Button>
-                                    <Modal show={ModalShowcart} onHide={handleModalClosecart}>
-                                        <Modal.Header closeButton>
-                                            <Modal.Title>Modal heading</Modal.Title>
-                                        </Modal.Header>
-                                        <Modal.Body>Woohoo, you're reading cart</Modal.Body>
-                                        <Modal.Footer>
-                                            <Button variant="secondary" onClick={handleModalClosecart}>
-                                                Close
-                                            </Button>
-                                            <Button variant="primary" onClick={handleModalClosecart}>
-                                                Save Changes
-                                            </Button>
-                                        </Modal.Footer>
-                                    </Modal>
                                 </div>
                             </div>
                         </div>
@@ -147,45 +116,16 @@ const Header = () => {
                     <div className="ms-auto seen">
                         <div className="d-flex justify-content-around align-items-center">
                             <div title="Wishlist" className="me-1">
-                                <Button variant="text" onClick={handleModalShow} className="text-white">
+                                <Button onClick={showALert} variant="text" className="text-white">
                                     <i class="far fa-heart"></i>
                                 </Button>
-                                <Modal show={ModalShow} onHide={handleModalClose}>
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>Modal heading</Modal.Title>
-                                    </Modal.Header>
-                                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                                    <Modal.Footer>
-                                        <Button variant="secondary" onClick={handleModalClose}>
-                                            Close
-                                        </Button>
-                                        <Button variant="primary" onClick={handleModalClose}>
-                                            Save Changes
-                                        </Button>
-                                    </Modal.Footer>
-                                </Modal>
                             </div>
                             <div title="Cart" className="me-1">
-                                <Button variant="text" onClick={handleModalShowcart} className="text-white">
-
+                                <Button onClick={showALert} variant="text" className="text-white">
                                     <Badge badgeContent={4} color="primary">
                                         <i className="fab fa-opencart"></i>
                                     </Badge>
                                 </Button>
-                                <Modal show={ModalShowcart} onHide={handleModalClosecart}>
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>Modal heading</Modal.Title>
-                                    </Modal.Header>
-                                    <Modal.Body>Woohoo, you're reading cart</Modal.Body>
-                                    <Modal.Footer>
-                                        <Button variant="secondary" onClick={handleModalClosecart}>
-                                            Close
-                                        </Button>
-                                        <Button variant="primary" onClick={handleModalClosecart}>
-                                            Save Changes
-                                        </Button>
-                                    </Modal.Footer>
-                                </Modal>
                             </div>
                             <div>
                                 {
@@ -216,12 +156,12 @@ const Header = () => {
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/manage-all-order"><i className="fab fa-opencart me-2"></i>My Cart</Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="" onClick={showALert}><i className="fab fa-opencart me-2"></i>My Cart</Link>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <Link className="text-capitialize text-decoration-none text-color" to="/add-packages"><i className="far fa-heart me-2"></i>My Wishlist</Link>
+                                                                    <Link className="text-capitialize text-decoration-none text-color" to="" onClick={showALert}><i className="far fa-heart me-2"></i>My Wishlist</Link>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
